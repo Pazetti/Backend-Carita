@@ -1,7 +1,7 @@
 // Importação da biblioteca express
 import express from "express";
 import demoRoutes from "./src/routes/demo.routes";
-import pontoRoutes from "./src/routes/pontosArrecadacao.routes"
+import pontoRoutes from "./src/routes/organizacao"
 
 // Criação da aplicação
 const app = express();

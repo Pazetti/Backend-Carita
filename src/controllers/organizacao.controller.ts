@@ -1,11 +1,12 @@
-import { IpontoArrecadacao } from "../../Ipontoarrecadacao";
+import { Organizacao } from "../interfaces/organizacao.interface";
 
-export const getPontoArrecadacao = () => {
+
+export const getOrganizacao = () => {
 
     return "Hello World";
   };
 
-  const pontoArrecadacao = [
+  const organizacao = [
 {
   id: 1,
   nome: "nometeste",
@@ -36,7 +37,7 @@ export const getPontoArrecadacao = () => {
 
  
 
-export const cadastrarPontoArrecadacao = (pontoArrecadacao: IpontoArrecadacao): boolean => {
+export const cadastrarOrganizacao = (organizacao: Organizacao): boolean => {
     return true;
 }
 
