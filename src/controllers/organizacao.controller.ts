@@ -1,46 +1,20 @@
 import { Organizacao } from "../interfaces/organizacao.interface";
+import { OrganizacaoModel } from "../models/organizacao.model";
 
+export const listAll = async (): Promise<Organizacao[]> => {
+    const organizacoes = await OrganizacaoModel.findAll();
+    return organizacoes;
+};
 
-export const getOrganizacao = () => {
+export const create = async (dadosOrganizacao: Organizacao): Promise<Organizacao> => {
+    const novaOrganizacao = await OrganizacaoModel.create({dadosOrganizacao});
+    return novaOrganizacao;
+};
 
-    return "Hello World";
-  };
+export const update = async (id: number, data: Partial<Organizacao>): Promise<Organizacao | null> => {
+    const organizacao = await OrganizacaoModel.findByPk(id);
+    if (!organizacao) return null;
 
-  const organizacao = [
-{
-  id: 1,
-  nome: "nometeste",
-  CNPJ: "8213648732652642",
-  telefone: 732167432764,
-  email:"emailteste@email.com",
-  horarioFuncionamento: "18h às 22h",
-  areaAtuacao:"educação",
-
-  logradouro:"rua teste",
-  numero: 12,
-  bairro: "bairroteste",
-  cidade:"cidadeteste",
-  estado:"SP",
-  CEP: "20.100-005",
-
-
-  numeroPix:"12345678890832",
-  descricaoInstituicao: "lidshfkdskgfkudsfkhdkfhykvjdfmhxkvs,nbxjfdvb",
-  link:"teste.com",
-
-  qrCode:"dhidhaihfieot4eweuewfeskkfsfdsnsd",
-  logo:"dhidhaihfieot4eweuewfeskkfsfdsnsd",
-  documentacoes:"dhidhaihfieot4eweuewfeskkfsfdsnsd"
-
-},
-];
-
- 
-
-export const cadastrarOrganizacao = (organizacao: Organizacao): boolean => {
-    return true;
-}
-
-
-
-
+    await organizacao.update(data);
+    return organizacao;
+};

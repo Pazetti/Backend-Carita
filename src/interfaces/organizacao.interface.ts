@@ -1,6 +1,6 @@
 export interface Organizacao{
 
-  id: number,
+  id?: number,
   nome: string,
   CNPJ: string,
   telefone: number,
@@ -18,6 +18,6 @@ export interface Organizacao{
   areaAtuacao:string,
   descricaoInstituicao: string,
   qrCode:string,
-  logo:string,
-  documentacoes:string
+  logo?:string,
+  documentacoes?:string
 }

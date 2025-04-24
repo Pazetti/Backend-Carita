@@ -1,0 +1,23 @@
+import { Request, Response, Router } from "express";
+import express from "express";
+import { create, listAll, update } from "../controllers/organizacao.controller";
+
+const router = express.Router();
+
+router.get("/", async (req: Request, res: Response) => {
+    const organizacoes = await listAll();
+    res.json({ organizacoes });
+});
+
+router.post("/", async (req: Request, res: Response) => {
+    const organizacao = await create(req.body);
+    res.json(organizacao);
+});
+
+router.put("/:id", async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const updated = await update(Number(id), req.body);
+    res.json(updated);
+});
+
+export default router;
