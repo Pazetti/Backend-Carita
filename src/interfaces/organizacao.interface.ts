@@ -2,7 +2,7 @@ export interface Organizacao{
 
   id?: number,
   nome: string,
-  CNPJ: string,
+  cnpj: string,
   telefone: number,
   email:string,
   logradouro:string,

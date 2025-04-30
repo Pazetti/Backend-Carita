@@ -2,9 +2,9 @@ import { DataTypes, Model, Optional } from "sequelize";
 import sequelize  from "../config/database";
 import { Organizacao } from "../interfaces/organizacao.interface";
 
-type OrganizacaoCreatinalAttributes = Optional<Organizacao, "id">
+type OrganizacaoCreationalAttributes = Optional<Organizacao, "id">
 
-export class OrganizacaoModel extends Model<Organizacao,OrganizacaoCreatinalAttributes>{
+export class OrganizacaoModel extends Model<Organizacao,OrganizacaoCreationalAttributes>{
     public id!: number;
     public nome!: string;
     public cnpj!: string;
@@ -14,10 +14,10 @@ export class OrganizacaoModel extends Model<Organizacao,OrganizacaoCreatinalAttr
     public numero!: number;
     public bairro!: string;
     public cidade!: string;
-    public cidade!: string;
-
-
 }
+
+
+
     id: DataTypes.INTEGER,
   nome: DataTypes.STRING,
   cnpj: DataTypes.STRING,
