@@ -8,6 +8,7 @@ app.use(express.json());
 
 app.use("/organizacao", organizacaoRoutes);
 
+
 app.listen(3000, () => {
     console.log("Servidor executando na porta 3000");
 });

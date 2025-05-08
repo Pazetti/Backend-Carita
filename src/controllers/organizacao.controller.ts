@@ -7,7 +7,7 @@ export const listAll = async (): Promise<Organizacao[]> => {
 };
 
 export const create = async (dadosOrganizacao: Organizacao): Promise<Organizacao> => {
-    const novaOrganizacao = await OrganizacaoModel.create({dadosOrganizacao});
+    const novaOrganizacao = await OrganizacaoModel.create(dadosOrganizacao);
     return novaOrganizacao;
 };
 

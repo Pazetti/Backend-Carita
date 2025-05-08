@@ -9,6 +9,18 @@ router.get("/", async (req: Request, res: Response) => {
     res.json({ organizacoes });
 });
 
+router.get("/:id", async (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const organizacoes = await listAll(); 
+    const organizacao = organizacoes.find((organizacao) => organizacao.id === id);
+  
+    if (!organizacao) {
+    res.status(404).send({ message: "Organização não encontrada" });
+    }
+  
+    res.status(200).json(organizacao);
+  });
+
 router.post("/", async (req: Request, res: Response) => {
     const organizacao = await create(req.body);
     res.json(organizacao);
